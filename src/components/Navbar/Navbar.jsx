@@ -15,8 +15,14 @@ import AdbIcon from '@mui/icons-material/Adb';
 // custom
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContextProvider';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [
+    {
+        type: 'Admin',
+        path: '/admin'
+    }
+];
 const settings = [
     {
         type: 'Register',
@@ -58,6 +64,13 @@ function ResponsiveAppBar() {
 
     //   custom
     const navigate = useNavigate();
+    const { logout, user, checkAuth } = useAuth();
+
+    React.useEffect(() => {
+        if(localStorage.getItem('token')) {
+            checkAuth();
+        };
+    }, []);
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -113,8 +126,8 @@ function ResponsiveAppBar() {
                 }}
                 >
                 {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <MenuItem key={page.type} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center" onClick={() => navigate(page.path)}>{page.type}</Typography>
                     </MenuItem>
                 ))}
                 </Menu>
@@ -141,19 +154,19 @@ function ResponsiveAppBar() {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map((page) => (
                 <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
+                    key={page.type}
+                    onClick={() => navigate(page.path)}
                     sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                    {page}
+                    {page.type}
                 </Button>
                 ))}
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
+                <Tooltip title="Account">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    <Avatar alt={user[0]} src="..." />
                 </IconButton>
                 </Tooltip>
                 <Menu
@@ -177,6 +190,9 @@ function ResponsiveAppBar() {
                         <Typography textAlign="center" onClick={() => navigate(setting.path)}>{setting.type}</Typography>
                     </MenuItem>
                 ))}
+                <MenuItem onClick={handleCloseUserMenu}>
+                        <Typography textAlign="center" onClick={logout}>Logout</Typography>
+                </MenuItem>
                 </Menu>
             </Box>
             </Toolbar>

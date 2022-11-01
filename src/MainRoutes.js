@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import RegistrationPage from './pages/RegistrationPage';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
+import AdminPage from './pages/AdminPage';
 
 const MainRoutes = () => {
     const PUBLIC_ROUTES = [
@@ -26,6 +27,11 @@ const MainRoutes = () => {
             link: '*',
             element: <NotFoundPage />,
             id: 4
+        },
+        {
+            link: '/admin',
+            element: <AdminPage />,
+            id: 5
         }
     ];
 
