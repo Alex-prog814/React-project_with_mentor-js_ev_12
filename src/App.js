@@ -2,14 +2,17 @@ import React from 'react';
 import MainRoutes from './MainRoutes';
 import Navbar from './components/Navbar/Navbar';
 import AuthContextProvider from './contexts/AuthContextProvider';
+import ProductContextProvider from './contexts/ProductContextProvider';
 
 const App = () => {
   return (
     <>
-      <AuthContextProvider>
-        <Navbar />
-        <MainRoutes />
-      </AuthContextProvider>
+      <ProductContextProvider>
+        <AuthContextProvider>
+          <Navbar />
+          <MainRoutes />
+        </AuthContextProvider>
+      </ProductContextProvider>
     </>
   )
 }

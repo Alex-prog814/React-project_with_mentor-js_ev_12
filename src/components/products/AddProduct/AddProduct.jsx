@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useProducts } from '../../../contexts/ProductContextProvider';
 
 const AddProduct = () => {
     const navigate = useNavigate();
+
+    const { addProduct } = useProducts();
+
     const [product, setProduct] = useState({
         name: '',
         description: '',
@@ -31,13 +35,16 @@ const AddProduct = () => {
     <>
         <h2>Add Product</h2>
 
-        <input type="text" placeholder="Title" name="title" onChange={handleInp} /><br />
+        <input type="text" placeholder="Title" name="name" onChange={handleInp} /><br />
         <input type="text" placeholder="Description" name="description" onChange={handleInp} /><br />
         <input type="number" placeholder="Price" name="price" onChange={handleInp} /><br />
         <input type="text" placeholder="Picture" name="picture" onChange={handleInp} /><br />
         <input type="text" placeholder="Type" name="type" onChange={handleInp} /><br />
 
-        <button>Save</button>
+        <button onClick={() => {
+            addProduct(product);
+            navigate('/products');
+        }}>Save</button>
     </>
   )
 }

@@ -19,6 +19,10 @@ import { useAuth } from '../../contexts/AuthContextProvider';
 
 const pages = [
     {
+        type: 'Products',
+        path: '/products'
+    },
+    {
         type: 'Admin',
         path: '/admin'
     }

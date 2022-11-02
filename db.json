@@ -89,14 +89,6 @@
       "id": 11
     },
     {
-      "name": "Mac Mini(M1,2020)",
-      "description": "Чип Apple M1 с 8-ядерным процессором, 8-ядерным графическим процессором и 16-ядерной системой Neural Engine 8 ГБ объединённой памяти SSD-накопитель 256 ГБ Порт Gigabit Ethernet",
-      "price": 790,
-      "picture": "https://www.istore.kg/media/products/mini-m1-1_ioi2c2Q.webp",
-      "type": "electronics",
-      "id": 12
-    },
-    {
       "name": "Mac mini (Intel, 2018)",
       "description": "Процессор 3,6 ГГц, 4‑ядерный, Intel Core i3 8‑го поколения, с графическим процессором Intel UHD Graphics 630,8 ГБ  памяти,SSD‑накопитель 256 ГБ,Порт Gigabit Ethernet",
       "price": 600,
@@ -215,14 +207,6 @@
       "picture": "https://www.istore.kg/media/products/dji-fpv-combo-1.webp",
       "type": "electronics",
       "id": 27
-    },
-    {
-      "name": "DJI FPV Fly More Kit",
-      "description": "Комплект DJI FPV Fly More Kit содержит две интеллектуальные летные батареи и зарядную станцию для увеличения времени полета. Номинальная мощность каждой батареи составляет до 44,4 Втч, что поддерживает полет в течение примерно 20 минут. Встроенная интеллектуальная система управления батареей отслеживает состояние батареи в режиме реального времени для более беспроблемного полета.Используйте зарядную станцию для последовательной зарядки до трех батарей.",
-      "price": 350,
-      "picture": "https://www.istore.kg/media/products/dji-fpv-fly-more-kit-1.webp",
-      "type": "electronics",
-      "id": 28
     },
     {
       "name": "Parrot Bebop Drone 2",
@@ -1271,14 +1255,6 @@
       "picture": "https://img.joomcdn.net/981ecea827adbe207e83b5ed56bdd7b7a687be3f_original.jpeg",
       "type": "sport",
       "id": 159
-    },
-    {
-      "name": "Перчатки MMA",
-      "description": "Половинчатые рукавицы и полая конструкция ладони, хорошая воздухопроницаемость, предотвращает потоотделение. Расширенный браслет с крепежной лентой для максимальной защиты. Изготовлен из высококачественной искусственной кожи с утолщенную пену, гибкий и носимый. Идеально подходит для тренировок по ММА, муай-тай и боксу.",
-      "price": 2100,
-      "picture": "https://img.joomcdn.net/682b1eee0ddf1f207ab0ae1e7ee4522bdc7a8b2f_original.jpeg",
-      "type": "sport",
-      "id": 160
     }
   ]
 }
