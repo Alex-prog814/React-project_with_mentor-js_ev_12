@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "name": "MacBook Pro 16",
-      "description": "10-ядерный процессор 32-ядерный графический процессор 16-ядерная система Neural Engine 64 ГБ объединённой памяти SSD-накопитель 2 ТБ Дисплей Liquid Retina XDR 16 дюймов Три порта Thunderbolt 4 Порт HDMI Слот для карт SDXC Разъём питания MagSafe 3 Клавиатура Magic Keyboard с Touch ID Трекпад Force Touch Адаптер питания USB-C 140 Вт",
-      "price": 550,
-      "picture": "https://www.istore.kg/media/products/Pro-16-M1-SP-US-1_hZ4eLKK.webp",
-      "type": "electronics",
-      "id": 1
-    },
-    {
       "name": "MacBook Pro 14",
       "description": "10-ядерный процессор 16-ядерный графический процессор 16-ядерная система Neural Engine 32 ГБ объединённой памяти SSD-накопитель 1 ТБ Дисплей Liquid Retina XDR 14 дюймов Три порта Thunderbolt 4 Порт HDMI Слот для карт SDXC Разъём питания MagSafe 3 Клавиатура Magic Keyboard с Touch ID Трекпад Force Touch Адаптер питания USB-C 96 Вт",
       "price": 3200,
@@ -1243,15 +1235,15 @@
     {
       "name": "Легкая боксерная мишень",
       "description": "Состояние: 100% новый. Материал: + Пена. Цвет: Показано, как фотографии. Размер: около 20 х 20 х 10 см / 7,87 х 7,87 х 3,94 дюйма. Вес: Приблизительный 170g",
-      "price": 23,
+      "price": 23456789,
       "picture": "https://img.joomcdn.net/9ac8c7babfc8c54ad67f991ab53c07a62773536f_original.jpeg",
       "type": "sport",
       "id": 158
     },
     {
-      "name": "Каратэ Мишень",
+      "name": "Каратэ Мишень UPD",
       "description": "Тип:Таеквондо ногу целевой . Цвет: Черный, Красный, Синий. Размер:40 x 20 x 10 см . Содержимое пакета:1 x Рука Щит Мишень. Материал: PU+ высокоэластичная компрессионная губка",
-      "price": 15,
+      "price": 15789,
       "picture": "https://img.joomcdn.net/981ecea827adbe207e83b5ed56bdd7b7a687be3f_original.jpeg",
       "type": "sport",
       "id": 159
