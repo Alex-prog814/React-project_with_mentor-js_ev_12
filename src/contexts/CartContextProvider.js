@@ -43,6 +43,11 @@ const CartContextProvider = ({ children }) => {
             type: CART.GET_CART,
             payload: cart
         });
+
+        dispatch({
+            type: CART.GET_CART_LENGTH,
+            payload: getCountProductsInCart()
+        });
     };
 
     const addProductToCart = product => {
@@ -73,17 +78,56 @@ const CartContextProvider = ({ children }) => {
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        dispatch({
-            type: CART.GET_CART,
-            payload: cart
+        getCart();
+    };
+
+    const changeProductCount = (count, id) => {
+        if(count < 0){
+            alert('Count of product can not be negative!');
+            return;
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart'));
+
+        cart.products = cart.products.map(product => {
+            if(product.item.id === id) {
+                product.count = count;
+                product.subPrice = calcSubPrice(product);
+            };
+            return product;
         });
+        cart.totalPrice = calcTotalPrice(cart.products);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        getCart();
+    };
+
+    const deleteProductInCart = id => {
+        let cart = JSON.parse(localStorage.getItem('cart'));
+        cart.products = cart.products.filter(elem => elem.item.id !== id);
+        cart.totalPrice = calcTotalPrice(cart.products);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        getCart();
+    };
+
+    const checkProductInCart = id => {
+        let cart = JSON.parse(localStorage.getItem('cart'));
+
+        if(cart) {
+            let newCart = cart.products.filter(elem => elem.item.id === id);
+            return newCart.length > 0 ? true : false;
+        };
     };
 
     const values = {
         addProductToCart,
         getCart,
+        changeProductCount,
+        deleteProductInCart,
+        checkProductInCart,
 
-        cart: state.cart
+        cart: state.cart,
+        cartLength: state.cartLength
     };
 
     return (

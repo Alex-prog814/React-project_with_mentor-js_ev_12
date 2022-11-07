@@ -11,7 +11,7 @@ import { useCart } from '../../contexts/CartContextProvider';
 import { Button, TextField, Typography } from '@mui/material';
 
 export default function Cart() {
-    const { getCart, cart } = useCart();
+    const { getCart, cart, changeProductCount, deleteProductInCart } = useCart();
 
     React.useEffect(() => {
         getCart();
@@ -55,13 +55,13 @@ export default function Cart() {
                   {row.item.price}
               </TableCell>
               <TableCell align="center">
-                  <TextField type="number" value={row.count} />
+                  <TextField type="number" value={row.count} onChange={e => changeProductCount(e.target.value, row.item.id)} />
               </TableCell>
               <TableCell align="center">
                   {row.subPrice}
               </TableCell>
               <TableCell align="center">
-                  <button>Delete From Cart</button>
+                  <button onClick={() => deleteProductInCart(row.item.id)}>Delete From Cart</button>
               </TableCell>
             </TableRow>
           ))}
